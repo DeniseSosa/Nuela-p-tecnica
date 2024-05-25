@@ -1,0 +1,192 @@
+[
+    {
+        "id": 1,
+        "nombre": "Juan",
+        "apellido": "Martínez",
+        "telefono": "123456789",
+        "mail": "juan.martinez@example.com",
+        "cursos":[
+            {            
+            "id":"1",
+            "asignatura": "Matemáticas",
+            "tipo": "obligatoria",
+            "curso": "1º bachillerato",
+            "grupo": "A",
+            "horas_semana": "5h",
+            "espacio_regular": "1º Bach-Grupo A"
+        },
+        {            
+            "id":"2",
+            "asignatura": "Física",
+            "tipo": "obligatoria",
+            "curso": "1º bachillerato",
+            "grupo": "A",
+            "horas_semana": "10h",
+            "espacio_regular": "1º Bach-Grupo A"
+        },
+        {            
+            "id":"3",
+            "asignatura": "Matemáticas",
+            "tipo": "obligatoria",
+            "curso": "3º bachillerato",
+            "grupo": "A",
+            "horas_semana": "5h",
+            "espacio_regular": "3º Bach-Grupo A"
+        }
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "María",
+        "apellido": "García",
+        "telefono": "987654321",
+        "mail": "maria.garcia@example.com",
+        "cursos":[
+            {
+                "id":"1",
+                "asignatura": "Historia",
+                "tipo": "obligatoria",
+                "curso": "1º bachillerato",
+                "grupo": "B",
+                "horas_semana": "4h",
+                "espacio_regular": "1º Bach-Grupo B"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Pedro",
+        "apellido": "López",
+        "telefono": "456789123",
+        "mail": "pedro.lopez@example.com",
+        "cursos":[
+            {   
+                "id":"1",
+                "asignatura": "Física",
+                "tipo": "obligatoria",
+                "curso": "1º bachillerato",
+                "grupo": "C",
+                "horas_semana": "3h",
+                "espacio_regular": "1º Bach-Grupo C"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "Ana",
+        "apellido": "Ruiz",
+        "telefono": "789123456",
+        "mail": "ana.ruiz@example.com",
+        "cursos":[
+            {
+                "id":"1",
+                "asignatura": "Literatura",
+                "tipo": "optativa",
+                "curso": "1º bachillerato",
+                "grupo": "A",
+                "horas_semana": "2h",
+                "espacio_regular": "1º Bach-Grupo A"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "nombre": "David",
+        "apellido": "Hernández",
+        "telefono": "234567890",
+        "mail": "david.hernandez@example.com",
+        "cursos": [
+            {
+                "id":"1",
+                "asignatura": "Química",
+                "tipo": "obligatoria",
+                "curso": "2º bachillerato",
+                "grupo": "A",
+                "horas_semana": "5h",
+                "espacio_regular": "2º Bach-Grupo A"
+            },
+            {
+                "id":"2",
+                "asignatura": "Química",
+                "tipo": "obligatoria",
+                "curso": "3º bachillerato",
+                "grupo": "A",
+                "horas_semana": "5h",
+                "espacio_regular": "3º Bach-Grupo A"
+            },
+            {
+                "id":"3",
+                "asignatura": "Química",
+                "tipo": "obligatoria",
+                "curso": "1º bachillerato",
+                "grupo": "A",
+                "horas_semana": "5h",
+                "espacio_regular": "1º Bach-Grupo A"
+            },
+            {
+                "id":"4",
+                "asignatura": "Biología",
+                "tipo": "obligatoria",
+                "curso": "2º bachillerato",
+                "grupo": "A",
+                "horas_semana": "4h",
+                "espacio_regular": "2º Bach-Grupo A"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "nombre": "Laura",
+        "apellido": "Fernández",
+        "telefono": "890123456",
+        "mail": "laura.fernandez@example.com",
+        "cursos": [
+            {
+                "id":"1",
+                "asignatura": "Inglés",
+                "tipo": "obligatoria",
+                "curso": "2º bachillerato",
+                "grupo": "B",
+                "horas_semana": "4h",
+                "espacio_regular": "2º Bach-Grupo B"
+            },
+            {
+                "id":"2",
+                "asignatura": "Portugués",
+                "tipo": "obligatoria",
+                "curso": "2º bachillerato",
+                "grupo": "C",
+                "horas_semana": "3h",
+                "espacio_regular": "2º Bach-Grupo C"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "nombre": "Carlos",
+        "apellido": "Sánchez",
+        "telefono": "345678901",
+        "mail": "carlos.sanchez@example.com",
+        "cursos": [
+            {
+                "id":"1",
+                "asignatura": "Biología",
+                "tipo": "obligatoria",
+                "curso": "2º bachillerato",
+                "grupo": "C",
+                "horas_semana": "3h",
+                "espacio_regular": "2º Bach-Grupo C"
+            },
+            {
+                "id":"2", 
+                "asignatura": "Geología",
+                "tipo": "optativa",
+                "curso": "2º bachillerato",
+                "grupo": "C",
+                "horas_semana": "2h",
+                "espacio_regular": "2º Bach-Grupo C"
+            }
+        ]
+    }
+   
+]
