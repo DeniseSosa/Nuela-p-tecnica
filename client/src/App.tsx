@@ -1,9 +1,11 @@
 
 import { NavBar } from "./views/NavBar"
-import { Profesores } from "./views/Profesores"
-
+import { Home, Profesores } from "./views/Home"
+import { Routes, Route } from "react-router-dom"
 import  { useEffect, useState } from "react"
 import axios from "axios"
+import { SemanalAnual } from "./views/SemanalAnual"
+import { TodosLosProfesores } from "./components/TodosLosProfesores"
 
 export interface Cursos {
   asignatura: string,
@@ -40,45 +42,51 @@ const App = () : JSX.Element=> {
       telefono: "+34 666 555 444",
       cursos:[]
 })
+const [horasTotal,setHorasTotal]= useState <number>(0)
 
 
 
-    useEffect(()=>{
-         async function data () {
-            try {
-                const url= 'http://localhost:3001/profesores'
-                const response = await axios.get<Profe[]>(url)
-                if(response.data)
-                    setProfesores(response.data)  
-            
-        } catch (error) {
-            console.log(error);
-            
-        }
-        
-    }
-    data()     
-        
-    },[])  
+
 
     const handleClickProfesor = async (id:string) => {
       try {
         const response = await axios.get(`http://localhost:3001/profesores/${id}`)
+        const response2= await axios.get(`http://localhost:3001/cursos/profesores/${id}/semanal`)
+
         if(response.data)  
         setProfId(response.data)
+      setHorasTotal(response2.data)
              
     } catch (error) {
         console.log(error);
         
     }
     }
-   
+     
+// const handlefilterSemanal = async() => {
+//   try {
+//     const response= await axios.get(`http://localhost:3001/cursos/profesores/${profId?.id}/semanal`)
+//     if(!response.data) throw new Error("sin datos")
+//       setHorasTotal(response.data)
+//     console.log(horasTotal);
+    
+//   } catch (error) {
+//     console.log(error);
+    
+//   }
+// }
     
 
   return (
     <div className="flex flex-row">
+      
     <NavBar/>
-    <Profesores profesores ={profesores} onClickProfesor= {handleClickProfesor} profId={profId}/>
+    <Routes>
+      <Route path="/profesores" element={<TodosLosProfesores/>}/>
+      <Route path="/home" element={<Home horasTotal={horasTotal} profesores={profesores} profId={profId} onClickProfesor={handleClickProfesor}/>}/>
+    </Routes>
+    <SemanalAnual onClickProfesor={handleClickProfesor} horasTotal={horasTotal} profId={profId}/>
+    
 
     </div>
 
