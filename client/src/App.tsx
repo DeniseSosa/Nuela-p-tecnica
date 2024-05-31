@@ -42,7 +42,7 @@ const App = () : JSX.Element=> {
       telefono: "+34 666 555 444",
       cursos:[]
 })
-const [horasTotal,setHorasTotal]= useState <number>(0)
+// const [horasTotal,setHorasTotal]= useState <number>(0)
 
 
 
@@ -51,11 +51,8 @@ const [horasTotal,setHorasTotal]= useState <number>(0)
     const handleClickProfesor = async (id:string) => {
       try {
         const response = await axios.get(`http://localhost:3001/profesores/${id}`)
-        const response2= await axios.get(`http://localhost:3001/cursos/profesores/${id}/semanal`)
-
         if(response.data)  
         setProfId(response.data)
-      setHorasTotal(response2.data)
              
     } catch (error) {
         console.log(error);
@@ -82,10 +79,10 @@ const [horasTotal,setHorasTotal]= useState <number>(0)
       
     <NavBar/>
     <Routes>
-      <Route path="/profesores" element={<TodosLosProfesores/>}/>
-      <Route path="/home" element={<Home horasTotal={horasTotal} profesores={profesores} profId={profId} onClickProfesor={handleClickProfesor}/>}/>
+      <Route path="/" element={<Home profesores={profesores} profId={profId} />}/>
+      <Route path="/profesores" element={<TodosLosProfesores onClickProfesor={handleClickProfesor}/>}/>
     </Routes>
-    <SemanalAnual onClickProfesor={handleClickProfesor} horasTotal={horasTotal} profId={profId}/>
+    
     
 
     </div>

@@ -1,5 +1,6 @@
 import { PropsProfe } from "../App";
 import { Card } from "../components/Card";
+import { SemanalAnual } from "./SemanalAnual";
 
 
 export interface HorasProfe extends PropsProfe{
@@ -20,7 +21,7 @@ export const Home: React.FC<HorasProfe> = ({
       </h2>
       <p className=" ml-2 pl-4">Crea y gestiona los profesores</p>
       <Card profId={profId} onClickProfesor={onClickProfesor} profesores={profesores} />
-
+      <SemanalAnual profId={profId} onClickProfesor={onClickProfesor} profesores={profesores}/>
     </div>
   );
 };

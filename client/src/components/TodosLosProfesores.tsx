@@ -1,9 +1,9 @@
 import axios from "axios";
-import { useEffect, useState } from "react"
-import { Profe } from "../App";
+import React, { useEffect, useState } from "react"
+import { Profe, PropsProfe } from "../App";
 
 
-export const TodosLosProfesores = () => {
+export const TodosLosProfesores: React.FC<PropsProfe> = ({onClickProfesor}) => {
     const [profesores, setProfesores] = useState <Profe[]>([]);
 
     useEffect(()=>{
@@ -33,18 +33,14 @@ export const TodosLosProfesores = () => {
                     profesores.map(p=> {
                         return (
                          <li>
-                            <a role="button">{p.nombre + " " + p.apellido}</a>
+                            <a 
+                            role="button"
+                            style={{ cursor: "pointer" }}
+                            key={p.id}
+                            onClick={()=>onClickProfesor(p.id)}>{p.nombre + " " + p.apellido}</a>
                         </li>
                         )
                     })
-                    // profesores.map((p) => {
-                    //     return (
-                    //       <p
-                    //         role="button"
-                    //         style={{ cursor: "pointer" }}
-                    //         key={p.id}
-                    //         // onClick={() => onClickProfesor(p.id)}
-                    //       ></p>)
                 }
                
             </ul>
