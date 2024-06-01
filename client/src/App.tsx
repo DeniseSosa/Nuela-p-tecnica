@@ -1,11 +1,14 @@
 
 import { NavBar } from "./views/NavBar"
-import { Home, Profesores } from "./views/Home"
+import { Home} from "./views/Home"
 import { Routes, Route } from "react-router-dom"
-import  { useEffect, useState } from "react"
+import  { useState } from "react"
 import axios from "axios"
-import { SemanalAnual } from "./views/SemanalAnual"
+
 import { TodosLosProfesores } from "./components/TodosLosProfesores"
+import { OnToggle } from "./components/OnToggle"
+
+//import { Semanal } from "./views/Semanal"
 
 export interface Cursos {
   asignatura: string,
@@ -26,14 +29,19 @@ export interface Cursos {
   }
 
   export  interface PropsProfe {
-    profesores: Profe[],
+   // profesores: Profe[],
     profId: Profe | null,
-    onClickProfesor: (id: string)=> void
+   
   }
+
+  export interface TodosLosProfesoresProps{
+  onClickProfesor: (id: string)=> void
+  }
+
 
 const App = () : JSX.Element=> {
 
-    const [profesores, setProfesores] = useState <Profe[]>([]);
+   // const [profesores, setProfesores] = useState <Profe[]>([]);
     const [profId, setProfId]= useState<Profe | null>({
       id:"",
       nombre: "Marta",
@@ -42,9 +50,6 @@ const App = () : JSX.Element=> {
       telefono: "+34 666 555 444",
       cursos:[]
 })
-// const [horasTotal,setHorasTotal]= useState <number>(0)
-
-
 
 
 
@@ -59,29 +64,18 @@ const App = () : JSX.Element=> {
         
     }
     }
-     
-// const handlefilterSemanal = async() => {
-//   try {
-//     const response= await axios.get(`http://localhost:3001/cursos/profesores/${profId?.id}/semanal`)
-//     if(!response.data) throw new Error("sin datos")
-//       setHorasTotal(response.data)
-//     console.log(horasTotal);
     
-//   } catch (error) {
-//     console.log(error);
-    
-//   }
-// }
-    
+
 
   return (
     <div className="flex flex-row">
       
     <NavBar/>
     <Routes>
-      <Route path="/" element={<Home profesores={profesores} profId={profId} />}/>
+      <Route path="/" element={<Home  profId={profId} />}/>
       <Route path="/profesores" element={<TodosLosProfesores onClickProfesor={handleClickProfesor}/>}/>
     </Routes>
+  <OnToggle profId={profId}/>
     
     
 

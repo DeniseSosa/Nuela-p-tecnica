@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react"
-import { Profe, PropsProfe } from "../App";
+import { Profe,  TodosLosProfesoresProps } from "../App";
 
 
-export const TodosLosProfesores: React.FC<PropsProfe> = ({onClickProfesor}) => {
+export const TodosLosProfesores: React.FC<TodosLosProfesoresProps> = ({onClickProfesor}) => {
     const [profesores, setProfesores] = useState <Profe[]>([]);
 
     useEffect(()=>{
