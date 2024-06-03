@@ -29,7 +29,6 @@ export const Semanal: React.FC= () => {
    
   return (
     <div className="flex flex-col"> 
-    <OnTogle handleFilterSemanal= {handleFilterSemanal}/>
       <div className="flex flex-row">
       <div className="w-2/6 h-24 bg-gray-200 m-2 p-2 rounded-2xl"> Horas Totales 
       <h2>{horasTotalSemanal}</h2></div>

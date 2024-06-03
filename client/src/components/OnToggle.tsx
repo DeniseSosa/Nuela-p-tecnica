@@ -4,23 +4,38 @@ import { PropsProfe } from "../App";
 import axios from "axios";
 
 
-interface OnToggleProps {
+export interface OnToggleProps {
     profId:PropsProfe
 }
 
+export type semanal = {
+  horas_total: number,
+  horas_lectivas: number,
+  horas_complementarias: number
+
+}
 
 export const OnToggle : React.FC<OnToggleProps>= ({profId}) => {
 
     const [isOn, setIsOn]= useState <boolean> (true)
 
-    const [horasTotalSemanal,setHorasTotal]= useState<number>(0)
+    const [horasTotalSemanal,setHorasTotal]= useState<semanal>({
+      horas_total: 0,
+      horas_lectivas: 0,
+      horas_complementarias:0
+    })
 
  
   async function handleFilterSemanal () {
       try {
         const response= await axios.get(`http://localhost:3001/cursos/profesores/${profId.id}/semanal`)
-        if(!response.data) throw new Error("sin datos")
-          setHorasTotal(response.data)
+        const response2= await axios.get(`http://localhost:3001/cursos/profesores/${profId.id}/semanal/lectivas`)
+        const response3= await axios.get(`http://localhost:3001/cursos/profesores/${profId.id}/semanal/complementarias`)
+        if(!response.data && !response2.data && !response3.data) throw new Error("sin datos")
+          setHorasTotal({
+      horas_total: response.data,
+    horas_lectivas: response2.data,
+  horas_complementarias: response3.data})
 
         console.log(horasTotalSemanal);
         
@@ -28,6 +43,9 @@ export const OnToggle : React.FC<OnToggleProps>= ({profId}) => {
         console.log(error);
         
       }
+    }
+    async function handleFilterAnual() {
+      
     }
 
     useEffect(()=>{
@@ -47,10 +65,12 @@ export const OnToggle : React.FC<OnToggleProps>= ({profId}) => {
         onClick={handleFilterSemanal}>Semanal</button>
         <div className="flex flex-row">
         <div className="w-2/6 h-24 bg-gray-200 m-2 p-2 rounded-2xl"> Horas Totales 
-        <h2>{horasTotalSemanal}</h2></div>
+        <h2>{horasTotalSemanal.horas_total}</h2></div>
         <div className="w-2/6 h-24 bg-gray-300 m-2 p-2 rounded-2xl"> Horas Lectivas
+        <h2>{horasTotalSemanal.horas_lectivas}</h2>
         </div>
         <div className="w-2/6 h-24 bg-gray-400 m-2 p-2 rounded-2xl">Horas Complementarias
+        <h2>{horasTotalSemanal.horas_complementarias}</h2>
         </div>
   
         </div>

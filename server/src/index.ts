@@ -7,6 +7,8 @@ import { deleteProfesorByIdHandler } from './handlers/profesores/deleteProfesorB
 import { postCursosHandler } from './handlers/cursos/postCursosHandler';
 import { getCursoHandler } from './handlers/cursos/getCursoHandler';
 import { semanalTotalHandler } from './handlers/filterHandlers/semanalHandler/semanalTotalHandler';
+import { semanalLectivasHandler } from './handlers/filterHandlers/semanalHandler/semanalLectivaHandler';
+import { semanalComplementariasHandler } from './handlers/filterHandlers/semanalHandler/semanalComplementariaHandler';
 const app = express();
 const PORT= 3001 
 
@@ -40,6 +42,9 @@ app.get('/cursos/profesores/:id', getCursoHandler)
 app.post('/cursos/profesores/:id', postCursosHandler)
 //Filtros
 app.get('/cursos/profesores/:id/semanal', semanalTotalHandler)
+app.get('/cursos/profesores/:id/semanal/lectivas', semanalLectivasHandler)
+app.get('/cursos/profesores/:id/semanal/complementarias', semanalComplementariasHandler)
+
 app.listen(PORT, () => {
     console.log(`server running on port: ${PORT}`);
     
