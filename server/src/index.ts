@@ -9,6 +9,9 @@ import { getCursoHandler } from './handlers/cursos/getCursoHandler';
 import { semanalTotalHandler } from './handlers/filterHandlers/semanalHandler/semanalTotalHandler';
 import { semanalLectivasHandler } from './handlers/filterHandlers/semanalHandler/semanalLectivaHandler';
 import { semanalComplementariasHandler } from './handlers/filterHandlers/semanalHandler/semanalComplementariaHandler';
+import { anualTotalHandler } from './handlers/filterHandlers/anualHandler/anualTotalHandler';
+import { anualLectivasHandler } from './handlers/filterHandlers/anualHandler/anualLectivasHandler';
+import { anualComplementariasHandler } from './handlers/filterHandlers/anualHandler/anualComplementariasHandler';
 const app = express();
 const PORT= 3001 
 
@@ -40,11 +43,14 @@ app.delete('/profesores/:id', deleteProfesorByIdHandler)
 //Cursos
 app.get('/cursos/profesores/:id', getCursoHandler)
 app.post('/cursos/profesores/:id', postCursosHandler)
-//Filtros
+//Filtros//semanales
 app.get('/cursos/profesores/:id/semanal', semanalTotalHandler)
 app.get('/cursos/profesores/:id/semanal/lectivas', semanalLectivasHandler)
 app.get('/cursos/profesores/:id/semanal/complementarias', semanalComplementariasHandler)
-
+//Filtros//anuales
+app.get('/cursos/profesores/:id/anual', anualTotalHandler)
+app.get('/cursos/profesores/:id/anual/lectivas', anualLectivasHandler)
+app.get('/cursos/profesores/:id/anual/complementarias', anualComplementariasHandler)
 app.listen(PORT, () => {
     console.log(`server running on port: ${PORT}`);
     
