@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 export interface OnToggleProps {
-    profId:PropsProfe
+    profId: PropsProfe
 }
 
 export type semanal = {
@@ -33,9 +33,10 @@ export const OnToggle : React.FC<OnToggleProps>= ({profId}) => {
         const response3= await axios.get(`http://localhost:3001/cursos/profesores/${profId.id}/semanal/complementarias`)
         if(!response.data && !response2.data && !response3.data) throw new Error("sin datos")
           setHorasTotal({
-      horas_total: response.data,
-    horas_lectivas: response2.data,
-  horas_complementarias: response3.data})
+        horas_total: response.data,
+        horas_lectivas: response2.data,
+        horas_complementarias: response3.data
+      })
 
         console.log(horasTotalSemanal);
         
@@ -51,6 +52,8 @@ export const OnToggle : React.FC<OnToggleProps>= ({profId}) => {
     useEffect(()=>{
         handleFilterSemanal()
     },[profId])
+
+ 
 
    return ( 
    <div className="flex justify-center">

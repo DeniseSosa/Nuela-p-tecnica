@@ -32,11 +32,10 @@ export const TodosLosProfesores: React.FC<TodosLosProfesoresProps> = ({onClickPr
 
                     profesores.map(p=> {
                         return (
-                         <li>
+                         <li key={p.id}>
                             <a 
                             role="button"
                             style={{ cursor: "pointer" }}
-                            key={p.id}
                             onClick={()=>onClickProfesor(p.id)}>{p.nombre + " " + p.apellido}</a>
                         </li>
                         )

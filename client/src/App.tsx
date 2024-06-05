@@ -28,11 +28,11 @@ export interface Cursos {
       cursos: Cursos[]
   }
 
-  export  interface PropsProfe {
-   // profesores: Profe[],
-    profId: Profe | null,
+  // export  interface PropsProfe {
+  //  // profesores: Profe[],
+  //   profId: Profe ,
    
-  }
+  // }
 
   export interface TodosLosProfesoresProps{
   onClickProfesor: (id: string)=> void
@@ -69,17 +69,22 @@ const App = () : JSX.Element=> {
 
   return (
     <div className="flex flex-row">
-      
+    <div >
     <NavBar/>
-    <Routes>
-      <Route path="/" element={<Home  profId={profId} />}/>
-      <Route path="/profesores" element={<TodosLosProfesores onClickProfesor={handleClickProfesor}/>}/>
-    </Routes>
-  <OnToggle profId={profId}/>
+      </div>
+      <div>
+
+        <Routes>
+          <Route path="/" element={<Home  profId={profId} />}/>
+          <Route path="/profesores" element={<TodosLosProfesores onClickProfesor={handleClickProfesor}/>}/>
+        </Routes>
+      <OnToggle profId={profId}/>
+      </div>
+      </div>
     
     
 
-    </div>
+   
 
   
   )
