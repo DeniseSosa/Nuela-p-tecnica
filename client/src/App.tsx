@@ -7,6 +7,7 @@ import axios from "axios"
 
 import { TodosLosProfesores } from "./components/TodosLosProfesores"
 import { OnToggle } from "./components/OnToggle"
+import { TablaDeHoras } from "./views/TablaDeHoras"
 
 //import { Semanal } from "./views/Semanal"
 
@@ -42,7 +43,7 @@ export interface Cursos {
 const App = () : JSX.Element=> {
 
    // const [profesores, setProfesores] = useState <Profe[]>([]);
-    const [profId, setProfId]= useState<Profe | null>({
+    const [profId, setProfId]= useState<Profe >({
       id:"",
       nombre: "Marta",
       apellido:"Martinez",
@@ -68,15 +69,16 @@ const App = () : JSX.Element=> {
 
 
   return (
-    <div className="flex flex-row">
-    <div >
-    <NavBar/>
+    <div className="flex flex-row ">
+    <div className="flex justify-start ">
+    <NavBar />
       </div>
-      <div>
+      <div className=" w-full">
 
         <Routes>
           <Route path="/" element={<Home  profId={profId} />}/>
           <Route path="/profesores" element={<TodosLosProfesores onClickProfesor={handleClickProfesor}/>}/>
+          <Route path="/grid" element={<TablaDeHoras profId={profId} />}/>
         </Routes>
       <OnToggle profId={profId}/>
       </div>
