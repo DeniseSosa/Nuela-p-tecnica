@@ -6,8 +6,8 @@ import  { useState } from "react"
 import axios from "axios"
 
 import { TodosLosProfesores } from "./components/TodosLosProfesores"
-import { OnToggle } from "./components/OnToggle"
-import { TablaDeHoras } from "./views/TablaDeHoras"
+// import { OnToggle } from "./components/OnToggle"
+// import { TablaDeHoras } from "./views/TablaDeHoras"
 
 //import { Semanal } from "./views/Semanal"
 
@@ -69,7 +69,7 @@ const App = () : JSX.Element=> {
 
 
   return (
-    <div className="flex flex-row ">
+    <div className="flex flex-row  bg-gray-200">
     <div className="flex justify-start ">
     <NavBar />
       </div>
@@ -78,9 +78,7 @@ const App = () : JSX.Element=> {
         <Routes>
           <Route path="/" element={<Home  profId={profId} />}/>
           <Route path="/profesores" element={<TodosLosProfesores onClickProfesor={handleClickProfesor}/>}/>
-          <Route path="/grid" element={<TablaDeHoras profId={profId} />}/>
         </Routes>
-      <OnToggle profId={profId}/>
       </div>
       </div>
     

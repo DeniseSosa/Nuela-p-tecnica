@@ -2,13 +2,20 @@ import axios from "axios"
 import {  Profe } from "../App"
 import { useEffect, useState } from "react"
 
-
+export interface Cursos {
+    asignatura: string,
+    tipo: "obligatoria" | "optativa",
+    curso: string,
+    grupo: string,
+    horas_semana: string,
+    espacio_regular: string
+    }
 export interface TablaDeHorasProps{
     profId: Profe
 }
 export const TablaDeHoras : React.FC <TablaDeHorasProps> = ({profId}) => {
 
-    const [cursos,setCursos] = useState<[]>([])
+    const [cursos,setCursos] = useState<Cursos[]>([])
 
     useEffect(()=>{
         async function ProfeDetail () {

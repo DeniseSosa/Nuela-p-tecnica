@@ -75,28 +75,29 @@ export const OnToggle : React.FC<OnToggleProps>= ({profId}) => {
  
 
    return ( 
-   <div className=" flex flex-col">
-    <div className="flex justify-center border-2 border-gray-100 rounded-xl bg-gray-100">
-      
+    <div className="w-full p-4 justify-center">
+   <div className="p-4 ">
+    <div className="flex  justify-center p-2">
+      <div className=" border-2 border-gray-300 rounded-xl bg-gray-300 p-0.5">
         <button 
-        className=" w-28 p-2 m-1 rounded-xl focus:outline-none focus:ring focus:ring-gray-300 focus:bg-gray-300"
+        className=" w-28 p-2 m-1 rounded-lg focus:outline-none focus:ring focus:ring-gray-300 focus:bg-gray-100"
         onClick={handleFilterSemanal}>Semanal</button>
      
         <button 
-        className=" w-28 p-2 m-1 rounded-xl focus:outline-none focus:ring focus:ring-gray-300 focus:bg-gray-300"
+        className=" w-28 p-2 m-1 rounded-lg focus:outline-none focus:ring focus:ring-gray-300 focus:bg-gray-100 "
         onClick={handleFilterAnual}>Anual</button>
         </div>
-
+        </div>
     {
         isOn
         ? ( 
         <div className="flex flex-row">
-        <div className="w-2/6 h-24 bg-gray-200 m-2 p-2 rounded-2xl"> Horas Totales 
+        <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg font-extrabold"> Horas Totales 
         <h2>{horasTotal.horas_total}</h2></div>
-        <div className="w-2/6 h-24 bg-gray-300 m-2 p-2 rounded-2xl"> Horas Lectivas
+        <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg font-extrabold"> Horas Lectivas
         <h2>{horasTotal.horas_lectivas}</h2>
         </div>
-        <div className="w-2/6 h-24 bg-gray-400 m-2 p-2 rounded-2xl">Horas Complementarias
+        <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg font-extrabold">Horas Complementarias
         <h2>{horasTotal.horas_complementarias}</h2>
         </div>
   
@@ -105,17 +106,18 @@ export const OnToggle : React.FC<OnToggleProps>= ({profId}) => {
       )
         : (
                 <div className="flex flex-row">
-                <div className="w-2/6 h-24 bg-gray-200 m-2 p-2 rounded-2xl"> Horas Totales 
+                <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg font-extrabold"> Horas Totales 
                 <h2>{horasTotal.horas_total}</h2></div>
-                <div className="w-2/6 h-24 bg-gray-300 m-2 p-2 rounded-2xl"> Horas Lectivas
+                <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg font-extrabold"> Horas Lectivas
                 <h2>{horasTotal.horas_lectivas}</h2>
                 </div>
-                <div className="w-2/6 h-24 bg-gray-400 m-2 p-2 rounded-2xl">Horas Complementarias
+                <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg font-extrabold">Horas Complementarias
                 <h2>{horasTotal.horas_complementarias}</h2>
                 </div>
                 </div>
             )
     }  
+      </div>
       </div>
    )
     
