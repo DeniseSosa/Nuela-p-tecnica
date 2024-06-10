@@ -75,7 +75,7 @@ export const OnToggle: React.FC<OnToggleProps> = ({ profId }) => {
 
   useEffect(() => {
     handleFilterSemanal();
-  }, [profId]);
+  }, [profId.id]);
 
   return (
     <div className="w-full p-4 justify-center">
@@ -83,14 +83,14 @@ export const OnToggle: React.FC<OnToggleProps> = ({ profId }) => {
         <div className="flex  justify-center p-2">
           <div className=" border-1 border-gray-200 rounded-2xl bg-gray-200 p-0.5">
             <button
-              className=" w-28 p-2 m-1 rounded-xl focus:outline-none focus:ring focus:ring-gray-100 focus:bg-gray-100 focus:font-semibold"
+              className=" w-28 p-2 m-1 rounded-xl focus:outline-none focus:ring focus:ring-white focus:bg-white focus:font-semibold"
               onClick={handleFilterSemanal}
             >
               Semanal
             </button>
 
             <button
-              className=" w-28 p-2 m-1 rounded-xl focus:outline-none focus:ring focus:ring-gray-100 focus:bg-gray-100 focus:font-semibold "
+              className=" w-28 p-2 m-1 rounded-xl focus:outline-none focus:ring focus:ring-white focus:bg-white focus:font-semibold "
               onClick={handleFilterAnual}
             >
               Anual

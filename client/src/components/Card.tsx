@@ -1,5 +1,11 @@
 import React from "react";
-import { PropsProfe } from "../App";
+import { Profe} from "../App";
+
+  export  interface PropsProfe {
+
+    profId: Profe ,
+   
+  }
 
 export const Card : React.FC<PropsProfe> = ({profId}:PropsProfe) => {
   return (
@@ -21,7 +27,7 @@ export const Card : React.FC<PropsProfe> = ({profId}:PropsProfe) => {
       </div>
 
       <div className="w-full flex flex-row justify-end">
-      <button className="m-2 p-4">
+      <button className="m-4 p-4 text-indigo-500 font-semibold text-md">
         Editar
       </button>
       </div>
