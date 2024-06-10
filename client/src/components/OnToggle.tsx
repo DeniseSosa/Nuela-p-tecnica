@@ -81,16 +81,16 @@ export const OnToggle: React.FC<OnToggleProps> = ({ profId }) => {
     <div className="w-full p-4 justify-center">
       <div className="p-4 ">
         <div className="flex  justify-center p-2">
-          <div className=" border-2 border-gray-300 rounded-xl bg-gray-300 p-0.5">
+          <div className=" border-1 border-gray-200 rounded-2xl bg-gray-200 p-0.5">
             <button
-              className=" w-28 p-2 m-1 rounded-lg focus:outline-none focus:ring focus:ring-gray-300 focus:bg-gray-100"
+              className=" w-28 p-2 m-1 rounded-xl focus:outline-none focus:ring focus:ring-gray-100 focus:bg-gray-100 focus:font-semibold"
               onClick={handleFilterSemanal}
             >
               Semanal
             </button>
 
             <button
-              className=" w-28 p-2 m-1 rounded-lg focus:outline-none focus:ring focus:ring-gray-300 focus:bg-gray-100 "
+              className=" w-28 p-2 m-1 rounded-xl focus:outline-none focus:ring focus:ring-gray-100 focus:bg-gray-100 focus:font-semibold "
               onClick={handleFilterAnual}
             >
               Anual
@@ -99,32 +99,32 @@ export const OnToggle: React.FC<OnToggleProps> = ({ profId }) => {
         </div>
         {isOn ? (
           <div className="flex flex-row">
-            <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg ">
-              <p className="font-bold text-2xl">Horas Totales</p>
-              <h2>{horasTotal.horas_total}</h2>
+            <div className="w-2/6 h-28 bg-white m-2 p-2 rounded-2xl shadow-lg ">
+              <p className="font-semibold text-md text-start p-2">Horas Totales</p>
+              <h2 className="font-bold text-3xl text-start p-2">{`${horasTotal.horas_total} ${"horas"} `}</h2>
             </div>
-            <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg">
-              <p className="font-bold text-2xl">Horas Lectivas</p>
-              <h2>{horasTotal.horas_lectivas}</h2>
+            <div className="w-2/6 h-28 bg-white m-2 p-2 rounded-2xl shadow-lg">
+              <p className="font-semibold text-md text-start p-2">Horas Lectivas</p>
+              <h2 className="font-bold text-3xl text-start p-2">{`${horasTotal.horas_lectivas} ${"horas"} `}</h2>
             </div>
-            <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg">
-              <p className="font-bold text-2xl">Horas Complementarias</p>
-              <h2>{horasTotal.horas_complementarias}</h2>
+            <div className="w-2/6 h-28 bg-white m-2 p-2 rounded-2xl shadow-lg">
+              <p className="font-semibold text-md text-start p-2">Horas Complementarias</p>
+              <h2 className="font-bold text-3xl text-start p-2">{`${horasTotal.horas_complementarias} ${"horas"} `}</h2>
             </div>
           </div>
         ) : (
           <div className="flex flex-row">
-            <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg">
-            <p className="font-bold text-2xl">Horas Totales</p>
-              <h2>{horasTotal.horas_total}</h2>
+            <div className="w-2/6 h-28 bg-white m-2 p-2 rounded-2xl shadow-lg">
+            <p className="font-semibold text-md text-start p-2">Horas Totales</p>
+              <h2 className="font-bold text-3xl text-start">{`${horasTotal.horas_total} ${"horas"} `}</h2>
             </div>
-            <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg">
-            <p className="font-bold text-2xl">Horas Lectivas</p>
-              <h2>{horasTotal.horas_lectivas}</h2>
+            <div className="w-2/6 h-28 bg-white m-2 p-2 rounded-2xl shadow-lg">
+            <p className="font-semibold text-md text-start p-2">Horas Lectivas</p>
+              <h2 className="font-bold text-3xl text-start p-2">{`${horasTotal.horas_lectivas} ${"horas"} `}</h2>
             </div>
-            <div className="w-2/6 h-24 bg-gray-100 m-2 p-2 rounded-2xl shadow-lg">
-            <p className="font-bold text-2xl">Horas Complementarias</p>
-              <h2>{horasTotal.horas_complementarias}</h2>
+            <div className="w-2/6 h-28 bg-white m-2 p-2 rounded-2xl shadow-lg">
+            <p className="font-semibold text-md text-start p-2">Horas Complementarias</p>
+              <h2 className="font-bold text-3xl text-start p-2">{`${horasTotal.horas_complementarias} ${"horas"} `}</h2>
             </div>
           </div>
         )}

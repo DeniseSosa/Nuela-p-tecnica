@@ -69,7 +69,7 @@ const App = () : JSX.Element=> {
 
 
   return (
-    <div className="flex flex-row  bg-gray-200">
+    <div className="flex flex-row  bg-gray-50">
     <div className="flex justify-start ">
     <NavBar />
       </div>

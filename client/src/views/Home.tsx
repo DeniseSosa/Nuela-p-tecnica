@@ -20,8 +20,9 @@ export const Home: React.FC<PropsProfe> = ({
       <p className=" ml-2 pl-4">Crea y gestiona los profesores</p>
       <Card profId={profId} />
       {/* <SemanalAnual profId={profId} onClickProfesor={onClickProfesor} profesores={profesores} /> */}
-      <hr></hr>
+      <hr/>
       <OnToggle profId={profId}/>
+       <hr/>
        <TablaDeHoras profId={profId}/>
     </div>
   );

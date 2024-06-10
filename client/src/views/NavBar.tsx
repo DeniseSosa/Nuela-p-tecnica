@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export const NavBar = () => {
   return (
     <>
-    <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+    <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 h-[calc(100vh-1rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 p-4">
         <h5 className="block  font-sans text-xl font-semibold text-gray-900">Menú</h5>
       </div>

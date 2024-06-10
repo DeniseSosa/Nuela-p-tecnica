@@ -8,9 +8,9 @@ export const Card : React.FC<PropsProfe> = ({profId}:PropsProfe) => {
       <hr />
 
       <div className=" flex flex-row m-2 p-4">
-        <div className=" w-32 h-32 bg-violet-200 rounded-3xl  m-2 p-4 ">
+        <div className=" w-32 h-32 bg-violet-200 rounded-3xl  m-2 p-4  shadow-md">
           <div className="  flex  w-20 h-20 m-2 p-2  justify-center">
-              <p className=" flex justify-center items-center text-5xl font-semibold font-sans text-indigo-500">{profId?.nombre.slice(0,1).concat(profId.apellido.slice(0,1))}</p>
+              <p className=" flex justify-center items-center text-5xl font-semibold font-sans text-indigo-500 ">{profId?.nombre.slice(0,1).concat(profId.apellido.slice(0,1))}</p>
           </div>
         </div>
 
